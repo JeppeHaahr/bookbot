@@ -13,6 +13,13 @@ def get_characters(file):
                 list_of_characters[character] += 1
     return list_of_characters
 
-def sort_list(list_for_sorting):
-    list_for_sorting.sort()
-    return list_for_sorting
+def sort_on(items):
+    return items["num"]
+
+def sort_list(dict_for_sorting):
+    new_list = []
+    for i in dict_for_sorting:
+        if i.isalpha() == True:
+            new_list.append({"char": i, "num": dict_for_sorting[i]})
+    new_list.sort(reverse = True, key = sort_on)
+    return new_list
